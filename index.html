@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #nodisplay {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick = "confirmKill()">Kill Securly (Made by schoolexploitkid)</button>
+    <script>
+      window.onbeforeunload = () => {return false;}
+      var kill = false;
+      function confirmKill() {
+        kill = confirm("Are you sure you want to kill Securly?");
+        if (kill) {
+          alert("Killing securly in five seconds. When the prompt to close the page shows, click cancel, then click 'prevent this page from making additional dialogues' and click cancel again.");
+          setTimeout(killCurly, 5000);
+        }
+      }
+      function killCurly() {
+        var iframe = document.createElement("iframe");
+        iframe.id = "nodisplay";
+        iframe.src = "https://poki.com";
+        document.body.appendChild(iframe);
+        kill = false;
+      }
+    </script>
+  </body>
+</html>
